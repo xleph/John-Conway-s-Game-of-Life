@@ -15,4 +15,6 @@ bash cgol
      *You may be so inclined as to randomize the digits or just pound your keyboard with as many one's and zero's as possible. There is no limit even though the grid will only recognize the input to the degree of NxN
 
   * Also no characters besides "1" or "0". But since I haven't schemed this algebraically you can edit the code so as to add functionality for additional characters i.e. "P" and "3"
+
+# Sorry!
 Sorry for the convoluted mess that is my README. I still haven't gotten around to styling these properly. :(
