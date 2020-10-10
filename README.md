@@ -25,7 +25,13 @@ path/to/cgol/dir/cgol2 -option1 -option2 -etc
   * -s: size of grid NxN
   
   * -f: specify file to draw grid from
-
+  
+  * -gen: only works with the "grid" executable installed; when installed this script will enable you to generate a random grid with a set size: i.e. 
+  ```
+  /path/to/cgol/dir/cgol2 -gen 30
+  ```
+  Be aware that the this will create a file named cgol.grid in the current directory
+  
 ```
 Grid Usage:
 cp ~/Downloads/grid path/to/cgol/dir/grid
