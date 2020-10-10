@@ -6,7 +6,7 @@ path/to/cgol/dir/cgol2 -option1 -option2 -etc
 
 * You may notice that the first couple lines of the file are preceeded with "#". Immediately proceeding these are two default grid tiling options which you may set to your liking.
 
-  * option-1: Size of the grid. i.e. "6" for 6x6, or "16" for 16x16
+  * option-1: Size of the grid. i.e. "#6" for 6x6, or "#16" for 16x16
   
      * options for both length and width may be added at some point in the future. For now, its just NxN
 
