@@ -1,3 +1,4 @@
+a=$((cat)) && rm -f cgol.grid
 until [ "$counter" == "$gen" ]
 do
 counter=$((counter+1))
