@@ -30,7 +30,18 @@ while test $# -gt 0; do
                     ;;
                 -h)
                     shift
-                    echo discription && exit
+                    echo 'Thank You For Downloading my implementation of CGOL for GNU BASH, I greatly appreciate your support and interest in my project! :)'
+                    echo ''
+                    echo ''
+                    echo '[                to load a specific file to the grid pass -f                ]'
+                    echo ''
+                    echo '[   to adjust alive and null (dead) cells pass -a and/or -n respectively    ]'
+                    echo '   * for blank spaces insert 2 apostrophes                                   '
+                    echo ''
+                    echo '[ to generate a random file with a size of "N" and read from it pass -gen N ]'
+                    echo ''
+                    echo '[                  to specify a size for the grid pass -s                   ]'
+                    exit
                     shift
                     ;;
                 -gen)
@@ -88,8 +99,11 @@ h=$((h+s))
 done
 echo "" #&& sleep 1s
 echo "Iteration: $itera"
+echo "Alive Cells: $live"
+live=0
 until [ "$f" == "$l" ]
 do
+live=$(($live+${t:$f:1}))
 f=$((f+1))
 f1=$((f+1))
 f2=$((f1-s))
