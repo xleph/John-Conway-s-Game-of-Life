@@ -1,7 +1,7 @@
 ## General info
 ```
 Usage:
-path/to/cgol/dir/cgol2 -option1 -option2 -etc
+path/to/cgol/dir/cgol2 -flag1 -flag2 -etc
 ```
 
 * You may notice that the first couple lines of the file are preceeded with "#". Immediately proceeding these are two default grid tiling options which you may set to your liking.
