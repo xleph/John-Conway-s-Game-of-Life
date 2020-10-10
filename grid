@@ -1,0 +1,13 @@
+until [ "$counter" == "$gen" ]
+do
+counter=$((counter+1))
+a=""
+lim=""
+until [ "$lim" == "$gen" ]
+do
+a=$a$((1 + RANDOM % 2))
+temp=$(echo $a | wc -c)
+lim=$((temp-1))
+done
+echo $a | tr '1' '0' | tr '2' '1' >> cgol.grid
+done
