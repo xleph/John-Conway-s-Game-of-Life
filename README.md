@@ -1,7 +1,7 @@
 ## General info
 ```
 Usage:
-path/to/cgol/cgol2 -option1 -option2 -etc
+path/to/cgol/dir/cgol2 -option1 -option2 -etc
 ```
 
 * You may notice that the first couple lines of the file are preceeded with "#". Immediately proceeding these are two default grid tiling options which you may set to your liking.
@@ -14,6 +14,23 @@ path/to/cgol/cgol2 -option1 -option2 -etc
   
      * You may be so inclined as to randomize the digits or just pound your keyboard with as many one's and zero's as possible. There is no limit even though the grid will only recognize the input to the degree of NxN
 
+* flags:
+
+  * -h: help (obviously)
+  
+  * -a: specify what alive cells will look like
+  
+  * -n: specify what dead cells will look like
+  
+  * -s: size of grid NxN
+  
+  * -f: specify file to draw grid from
+
+```
+Grid Usage:
+cp ~/Downloads/grid path/to/cgol/dir/grid
+*please note that this file is only supplemental to cgol2 and will not work without it!
+```
 
 # Sorry!
 Sorry for the convoluted mess that is my README. I still haven't gotten around to styling these properly. :(
