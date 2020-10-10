@@ -1,7 +1,7 @@
 ## General info
 ```
 Usage:
-path/to/cgol/dir/cgol2 -flag1 -flag2 -etc
+path/to/cgol/dir/cgol3 -flag1 -flag2 -etc
 ```
 
 * You may notice that the first couple lines of the file are preceeded with "#". Immediately proceeding these are two default grid tiling options which you may set to your liking.
@@ -28,7 +28,7 @@ path/to/cgol/dir/cgol2 -flag1 -flag2 -etc
   
   * -gen: only works with the "grid" executable installed; when installed this script will enable you to generate a random grid with a set size: i.e. 
   ```
-  /path/to/cgol/dir/cgol2 -gen 30
+  /path/to/cgol/dir/cgol3 -gen 30
   ```
   Be aware that the this will create a file named cgol.grid in the current directory
   
