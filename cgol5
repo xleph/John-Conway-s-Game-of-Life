@@ -1,0 +1,186 @@
+#!/bin/bash
+#16
+#1000000000000000101000000000000011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000101000000000000011000000000000000000000000000000000000000000
+s=$(head -2 ~/.prog/bin/cgol2 | tail -1 )
+s=${s:1:100}
+t=$(head -3 ~/.prog/bin/cgol2 | tail -1 )
+t="0"${t:1:10000000000}
+itera=-1
+while test $# -gt 0; do
+           case "$1" in
+                -a)
+                    shift
+                    alive=$1
+                    shift
+                    ;;
+                -c)
+                    shift
+                    capture=1
+                    shift
+                    ;;
+                -f)
+                    shift
+                    file=$1
+                    shift
+                    ;;
+                -n)
+                    shift
+                    dead=$1
+                    shift
+                    ;;
+                -s)
+                    shift
+                    s=$1
+                    shift
+                    ;;
+                -h)
+                    shift
+                    echo 'Thank You For Downloading my implementation of CGOL for GNU BASH, I greatly appreciate your support and interest in my project! :)'
+                    echo ''
+                    echo ''
+                    echo '[                to load a specific file to the grid pass -f                ]'
+                    echo ''
+                    echo '[                  to capture all states of a game pass -c                  ]'
+                    echo ''
+                    echo '[   to adjust alive and null (dead) cells pass -a and/or -n respectively    ]'
+                    echo '   * for blank spaces insert 2 apostrophes                                   '
+                    echo ''
+                    echo '[ to generate a random file with a size of "N" and read from it pass -gen N ]'
+                    echo ''
+                    echo '[                  to specify a size for the grid pass -s                   ]'
+                    exit
+                    shift
+                    ;;
+                -gen)
+                    shift
+                    gen=$1
+                    shift
+                    ;;
+                *)
+                   echo "$1 is not a recognized flag!"
+                   return 1;
+                   ;;
+          esac
+done
+[ "$alive" == "" ] && alive=1
+[ "$dead" == "" ] && dead=0
+[ "$gen" != "" ] && export gen=$gen && bash ~/.prog/bin/grid && file=./cgol.grid
+if [ "$file" != "" ]
+then
+t=0
+s=0
+until [ "$s" == "$updoot" ]
+do
+updoot=$((updoot+1))
+line=$(head -$updoot $file | tail -1 )
+tmp=$(echo $line | wc -c)
+s=$((tmp-1))
+t="$t$line"
+done
+fi
+l=$((s*s))
+s1=$((s+1))
+s2=$((s-1))
+l1=$((l+1))
+ls=$((l+s))
+until [ "$done" == "1" ]
+do
+itera=$((itera+1))
+#
+clear
+#
+b=0
+h=1
+until [ "$count" == "$s" ]
+do
+count=$((count+1))
+#
+temp=${t:$h:$s}
+subcount=0
+out=""
+until [ "$subcount" == "$s1" ]
+do
+out=$out" "${temp:$subcount:1}
+subcount=$((subcount+1))
+done
+#
+echo $out | tr '0' "$dead" | tr '1' "$alive" 
+[ "$capture" != "" ] && echo $out | tr '0' "$dead" | tr '1' "$alive" >> capture.grid
+h=$((h+s))
+done
+echo ""
+[ "$capture" != "" ] && echo "- - - - - - - - - - -" >> capture.grid
+echo "Iteration: $itera"
+echo "Alive Cells: $live"
+live=0
+until [ "$f" == "$l" ]
+do
+live=$(($live+${t:$f:1}))
+f=$((f+1))
+f1=$((f+1))
+f2=$((f1-s))
+f3=$((f2-1))
+f4=$((f3-1))
+f5=$((f-1))
+f8=$((f1+s))
+f7=$((f8-1))
+f6=$((f7-1))
+[ "${f2:0:1}" == "-" ] && f2=$((f2+l))
+[ "${f3:0:1}" == "-" ] && f3=$((f3+l))
+[ "${f4:0:1}" == "-" ] && f4=$((f4+l))
+[ "${f5:0:1}" == "-" ] && f5=$((f5+l))
+#subtract all by "l" and see whether negative or pos
+t6=$((f6-l)) && [ "${t6:0:1}" == "-" ] || f6=$t6
+t7=$((f7-l)) && [ "${t7:0:1}" == "-" ] || f7=$t7
+t8=$((f8-l)) && [ "${t8:0:1}" == "-" ] || f8=$t8
+
+cause=0
+until [ $cause == $s ]
+do
+cause=$((cause+1))
+ttmp=$((cause*s))
+[ "$f" == "$ttmp" ] && f1=$((f-s2)) && f2=$((f1-s)) && f8=$((f1+s))
+[ "${f2:0:1}" == "-" ] && f2=$((l-s2))
+[ "$f8" == "$l1" ] && f8=1
+done
+cause=-1
+until [ $cause == $s ]
+do
+cause=$((cause+1))
+ttmp=$((cause*s))
+[ "$f5" == "$ttmp" ] && f5=$((f+s2)) && f4=$((f5-s)) && f6=$((f5+s))
+[ "$f6" == "$ls" ] && f6=$s
+[ "$f4" == "0" ] && f4=$l
+done
+[ "$f" == "$s" ] && f3=$l
+[ "$f" == "$l" ] && f7=$s
+[ "$f2" == "0" ] && f2=$l
+[ "$f7" == "0" ] && f7=$l
+[ "$f8" == "0" ] && f8=$l
+#echo f $f f1 $f1 f2 $f2 f3 $f3 f4 $f4 f5 $f5 f6 $f6 f7 $f7 f8 $f8 ${t:$f1:1}+${t:$f2:1}+${t:$f3:1}+${t:$f4:1}+${t:$f6:1}+${t:$f7:1}+${t:$f8:1}+${t:$f5:1} && sleep 1s
+ft=$((${t:$f1:1}+${t:$f2:1}+${t:$f3:1}+${t:$f4:1}+${t:$f6:1}+${t:$f7:1}+${t:$f8:1}+${t:$f5:1}))
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "0" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "1" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "2" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "3" ] && b=$b"1"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "4" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "5" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "6" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "7" ] && b=$b"0"
+[ "${t:$f:1}" == "0" ] && [ "$ft" == "8" ] && b=$b"0"
+
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "0" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "1" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "2" ] && b=$b"1"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "3" ] && b=$b"1"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "4" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "5" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "6" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "7" ] && b=$b"0"
+[ "${t:$f:1}" == "1" ] && [ "$ft" == "8" ] && b=$b"0"
+done
+[ "$t" == "$b" ] && done=1
+t=$b
+count=0
+f=0
+done
