@@ -32,6 +32,7 @@ path/to/cgol/dir/cgol3 -flag1 -flag2 -etc
   ```
   Be aware that the this will create a file named cgol.grid in the current directory
   
+  * -c: capture all stages of a given game
 ```
 Grid Usage:
 cp ~/Downloads/grid path/to/cgol/dir/grid
