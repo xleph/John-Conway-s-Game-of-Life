@@ -39,5 +39,15 @@ cp ~/Downloads/grid path/to/cgol/dir/grid
 *please note that this file is only supplemental to cgol2 and will not work without it!
 ```
 
+# The Installer:
+
+First open a terminal
+
+```
+cd Downloads
+chmod +x installer.sh
+./installer.sh
+```
+
 # Sorry!
 Sorry for the convoluted mess that is my README. I still haven't gotten around to styling these properly. :(
