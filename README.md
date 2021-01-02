@@ -46,6 +46,3 @@ cd Downloads
 chmod +x installer.sh
 ./installer.sh
 ```
-
-# Sorry!
-Sorry for the convoluted mess that is my README. I still haven't gotten around to styling these properly. :(
