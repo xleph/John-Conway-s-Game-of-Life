@@ -1,4 +1,7 @@
 ## General info
+Requires: A POSIX like shell with brace expansion support
+
+i.e. ${variable:0:1}
 ```
 Usage:
 path/to/cgol/dir/cgol3 -flag1 -flag2 -etc
@@ -16,7 +19,7 @@ path/to/cgol/dir/cgol3 -flag1 -flag2 -etc
 
 * flags:
 
-  * -h: help (obviously)
+  * -h: help
   
   * -a: specify what alive cells will look like
   
@@ -28,16 +31,11 @@ path/to/cgol/dir/cgol3 -flag1 -flag2 -etc
   
   * -gen: only works with the "grid" executable installed; when installed this script will enable you to generate a random grid with a set size: i.e. 
   ```
-  /path/to/cgol/dir/cgol3 -gen 30
+  cgol$version -gen 30
   ```
   Be aware that the this will create a file named cgol.grid in the current directory
   
   * -c: capture all stages of a given game
-```
-Grid Usage:
-cp ~/Downloads/grid path/to/cgol/dir/grid
-*please note that this file is only supplemental to cgol2 and will not work without it!
-```
 
 # The Installer:
 
